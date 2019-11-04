@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="UTF-8">
+                 
+        <!-- If IE use the latest rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                     
+        <!-- Set the page to the width of the device and set the zoon level -->
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        
+    <title>Payment Page</title>
+</head>
+<body style="background-image: url(lookmyimg.jpg); background-repeat: no-repeat;" onload="loaddoc()">
+
+        <nav class="navbar navbar-dark bg-info">
+                <div class = "container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" ><img src="guitar_symbol.png" width="60" height="40"></a>
+                        <a class = "navbar-brand" href="#">GUITAR-CENTER</a>
+                    </div>
+                    
+                    <ul class="nav navbar-nav">
+                           
+                        <li class="active"><a href="gittarcenterwebsite.html">Home</a></li>
+                         <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false">Guitar</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink1">
+                              <a class="dropdown-item" href="#">Fender Series</a><br>
+                              <a class="dropdown-item" href="#">Luna Henna Oasis</a><br>
+                              <a class="dropdown-item" href="#">Natural Guitar</a>
+                            </div>
+                          </li>                   
+                        
+                        <li class="active"><a href="#">Features</a></li>
+                        <li class="active"><a href="#">Contact Us</a></li>
+                        <li class="active"><a href="#">Feedback</a></li>
+                    
+                   
+                    </ul>
+                </div>
+            </nav>
+<div id="guitarinfo" style="height: 325px; width:1400px">
+       <div id="mydiv" style="float:left; margin-left: 30px">
+            <img src="guitar-3.jpg" id="para4" height="300" width="500">
+       </div>
+       <div id="mydiv2" style="margin-top: 26px; margin-left: 553px">
+       <b style="font-size: 20px">Product Desicription:-</b> <span id="para1"></span><br><br>
+       <b style="font-size: 20px">Product Price:-</b> <span id="para5"></span><br><br>
+       <b style="font-size: 20px">Shipping Charge:-</b> <span id= "para2"></span><br><br>
+       <b style="font-size: 20px">Customer Review:-</b> <span id="para3"></span><br>
+       
+       </div>
+    
+
+    
+</div>
+
+
+<h3 style="margin-left: 400px; color:blue">Payment Method:</h3>
+<div class="creditCardForm" id="PaymentDiv" style="border: 1px solid black; height:420px;width:600px; margin-left:400px; float: left; margin-top:10px">
+   
+        <h3 style="margin-left: 215px;  color: brown">Confirm Purchase</h3>
+    
+
+  <div id ="payment">
+      
+    <span style="margin-left: 50px; font-size:20px">Owner:</span> <input type="text" id="gname" style="margin-left: 100px" required><br><br>
+    <span style="margin-left: 50px; font-size:20px">Card Number:</span><input type="number" id="cnum" style="margin-left: 43px" required><br><br>
+    <span style="margin-left: 50px; font-size:20px">Security Code(CVV):</span> <input type="number" id="scode" style="margin-left: 10px" required><br><br>
+    
+    <span style="margin-left: 50px; font-size:20px">Expiration Month and year:</span>
+    <select style="margin-left: 10px" id="exdate">
+            <option>   </option>
+            <option value="01">January</option>
+            <option value="02">February </option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <select id="expyear">
+            <option>    </option>
+            <option value="16"> 2016</option>
+            <option value="17"> 2017</option>
+            <option value="18"> 2018</option>
+            <option value="19"> 2019</option>
+            <option value="20"> 2020</option>
+            <option value="21"> 2021</option>
+        </select><br><br>
+        <span style="margin-left: 50px; font-size:20px">Shipping Address: <input type="text" id="add" style="margin-left: 20px" required>
+        <br><br>
+        <span style="margin-left: 50px; font-size:20px">BirthDay: </span> <input type="date" id="bday" name="bday" style="margin-left: 40px" required>
+        <br><br>
+        <span style="margin-left: 50px; font-size:20px">Email:</span><input type="email" id="mail" style="margin-left: 70px" pattern=".+@email.com" size="25" required>
+    </div>
+</div>
+
+
+<button type="button" id="paymentreview" class="btn btn-info" style="margin-left: 30px; margin-top: 250px; float: left;" onclick="transferdata()"> Go to Review  </button><br>
+
+
+<div id="PaymentDiv2" style="border: 1px solid black; height:350px;width:600px; margin-left:400px; float: left; margin-top:10px; display: none">
+    <strong style="margin-left: 50px; font-size:20px">Name:</strong><span id="oname" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Account Details:</strong><span id="cardnum" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Code:</strong><span id="cvv" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Expiration month and year:</strong><span id="exp" style=" font-size:20px"></span> and <span id="myyear" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Shipping Address:</strong><span id="shipadd" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Date of Birth:</strong><span id = "bdate" style=" font-size:20px"></span><br><br>
+    <strong style="margin-left: 50px; font-size:20px">Email:</strong><span id = "eemail" style=" font-size:20px"></span><br><br>
+    
+</div>
+
+<button type="button" id="edit" class="btn btn-info" style="margin-left: 58px; margin-top: 234px; float:left ; display: none" onclick="revdata()"> Edit  </button><br>
+
+<button onclick="location.href='guitarcenter3.html'; buyproduct()" id="buy" class="btn btn-info" style="margin-left: 53px; margin-top: 215px;float:left ; display: none" >Buy</button>
+
+<script src="guitarcenterpage2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+</html>
